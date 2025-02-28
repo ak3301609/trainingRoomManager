@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysWrongdataLogMapper">
+
+    <resultMap type="SysWrongdataLog" id="SysWrongdataLogResult">
+        <result property="wrongdataId"    column="wrongdata_id"    />
+        <result property="techerId"    column="techer_id"    />
+        <result property="techerName"    column="techer_name"    />
+        <result property="address"    column="address"    />
+        <result property="reason"    column="reason"    />
+        <result property="date"    column="date"    />
+        <result property="schoolWeek"    column="school_week"    />
+        <result property="week"    column="week"    />
+        <result property="done"    column="done"    />
+        <result property="className"    column="class_name"    />
+        <result property="kejie"    column="kejie"    />
+        <result property="campusId"    column="campus_id"    />
+        <result property="buildingId"    column="building_id"    />
+        <result property="roomId"    column="room_id"    />
+        <result property="course"    column="course"    />
+    </resultMap>
+
+    <sql id="selectSysWrongdataLogVo">
+        select wrongdata_id, techer_id, techer_name, address, reason, date, school_week, week, done, class_name, kejie, campus_id, building_id, room_id, course from sys_wrongdata_log
+    </sql>
+
+    <select id="selectSysWrongdataLogList" parameterType="SysWrongdataLog" resultMap="SysWrongdataLogResult">
+        <include refid="selectSysWrongdataLogVo"/>
+        <where>
+            <if test="techerId != null  and techerId != ''"> and techer_id = #{techerId}</if>
+            <if test="techerName != null  and techerName != ''"> and techer_name like concat('%', #{techerName}, '%')</if>
+            <if test="address != null  and address != ''"> and address like concat('%', #{address}, '%')</if>
+            <if test="reason != null  and reason != ''"> and reason like concat('%', #{reason}, '%')</if>
+            <if test="params.beginTime != null and params.beginTime != ''"><!-- 开始时间检索 -->
+                AND date_format(`date`,'%y%m%d') &gt;= date_format(#{params.beginTime},'%y%m%d')
+            </if>
+            <if test="params.endTime != null and params.endTime != ''"><!-- 结束时间检索 -->
+                AND date_format(`date`,'%y%m%d') &lt;= date_format(#{params.endTime},'%y%m%d')
+            </if>
+            <if test="done != null  and done != ''"> and done = #{done}</if>
+            <if test="className != null  and className != ''"> and class_name like concat('%', #{className}, '%')</if>
+            <if test="kejie != null  and kejie != ''"> and kejie = #{kejie}</if>
+            <if test="campusId != null "> and campus_id = #{campusId}</if>
+            <if test="buildingId != null "> and building_id = #{buildingId}</if>
+            <if test="roomId != null "> and room_id = #{roomId}</if>
+            <if test="course != null  and course != ''"> and course = #{course}</if>
+        </where>
+        ORDER BY date DESC
+    </select>
+
+    <select id="selectSysWrongdataLogByWrongdataId" parameterType="Long" resultMap="SysWrongdataLogResult">
+        <include refid="selectSysWrongdataLogVo"/>
+        where wrongdata_id = #{wrongdataId}
+    </select>
+
+    <insert id="insertSysWrongdataLog" parameterType="SysWrongdataLog" useGeneratedKeys="true" keyProperty="wrongdataId">
+        insert into sys_wrongdata_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="techerId != null and techerId != ''">techer_id,</if>
+            <if test="techerName != null and techerName != ''">techer_name,</if>
+            <if test="address != null and address != ''">address,</if>
+            <if test="reason != null and reason != ''">reason,</if>
+            <if test="date != null">date,</if>
+            <if test="schoolWeek != null">school_week,</if>
+            <if test="week != null">week,</if>
+            <if test="done != null">done,</if>
+            <if test="className != null and className != ''">class_name,</if>
+            <if test="kejie != null and kejie != ''">kejie,</if>
+            <if test="campusId != null">campus_id,</if>
+            <if test="buildingId != null">building_id,</if>
+            <if test="roomId != null">room_id,</if>
+            <if test="course != null">course,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="techerId != null and techerId != ''">#{techerId},</if>
+            <if test="techerName != null and techerName != ''">#{techerName},</if>
+            <if test="address != null and address != ''">#{address},</if>
+            <if test="reason != null and reason != ''">#{reason},</if>
+            <if test="date != null">#{date},</if>
+            <if test="schoolWeek != null">#{schoolWeek},</if>
+            <if test="week != null">#{week},</if>
+            <if test="done != null">#{done},</if>
+            <if test="className != null and className != ''">#{className},</if>
+            <if test="kejie != null and kejie != ''">#{kejie},</if>
+            <if test="campusId != null">#{campusId},</if>
+            <if test="buildingId != null">#{buildingId},</if>
+            <if test="roomId != null">#{roomId},</if>
+            <if test="course != null">#{course},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysWrongdataLog" parameterType="SysWrongdataLog">
+        update sys_wrongdata_log
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="techerId != null and techerId != ''">techer_id = #{techerId},</if>
+            <if test="techerName != null and techerName != ''">techer_name = #{techerName},</if>
+            <if test="address != null and address != ''">address = #{address},</if>
+            <if test="reason != null and reason != ''">reason = #{reason},</if>
+            <if test="date != null">date = #{date},</if>
+            <if test="done != null and done != ''">done = #{done},</if>
+            <if test="className != null and className != ''">class_name = #{className},</if>
+            <if test="kejie != null and kejie != ''">kejie = #{kejie},</if>
+            <if test="campusId != null">campus_id = #{campusId},</if>
+            <if test="buildingId != null">building_id = #{buildingId},</if>
+            <if test="roomId != null">room_id = #{roomId},</if>
+            <if test="course != null">course = #{course},</if>
+        </trim>
+        where wrongdata_id = #{wrongdataId}
+    </update>
+
+    <delete id="deleteSysWrongdataLogByWrongdataId" parameterType="Long">
+        delete from sys_wrongdata_log where wrongdata_id = #{wrongdataId}
+    </delete>
+
+    <delete id="deleteSysWrongdataLogByWrongdataIds" parameterType="String">
+        delete from sys_wrongdata_log where wrongdata_id in
+        <foreach item="wrongdataId" collection="array" open="(" separator="," close=")">
+            #{wrongdataId}
+        </foreach>
+    </delete>
+</mapper>

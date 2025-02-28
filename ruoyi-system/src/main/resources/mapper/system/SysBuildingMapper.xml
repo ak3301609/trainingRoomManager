@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysBuildingMapper">
+    
+    <resultMap type="SysBuilding" id="SysBuildingResult">
+        <result property="buildingId"    column="building_id"    />
+        <result property="buildingName"    column="building_name"    />
+        <result property="campusId"    column="campus_id"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+        <association property="sysCampus" javaType="SysCampus" resultMap="SysCampusResult" />
+    </resultMap>
+
+    <resultMap type="SysCampus" id="SysCampusResult">
+        <result property="campusId"    column="campus_id"    />
+        <result property="campusName"    column="campus_name"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectSysBuildingVo">
+        select building_id, building_name, campus_id, del_flag, create_by, create_time, update_by, update_time, remark from sys_building
+    </sql>
+
+    <select id="selectSysBuildingList" parameterType="SysBuilding" resultMap="SysBuildingResult">
+        select b.building_id, b.building_name, b.campus_id, b.del_flag, b.create_by, b.create_time, b.update_by, b.update_time, b.remark,
+        c.campus_id, c.campus_name, c.del_flag, c.create_by, c.create_time, c.update_by, c.update_time, c.remark
+        from sys_building b
+        left join sys_campus c on c.campus_id = b.campus_id
+        <where>
+            b.del_flag = '0'
+            <if test="buildingName != null  and buildingName != ''"> and b.building_name like concat('%', #{buildingName}, '%')</if>
+            <if test="campusId != null "> and b.campus_id = #{campusId}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysBuildingByBuildingId" parameterType="Long" resultMap="SysBuildingResult">
+        <include refid="selectSysBuildingVo"/>
+        where building_id = #{buildingId}
+    </select>
+
+    <insert id="insertSysBuilding" parameterType="SysBuilding" useGeneratedKeys="true" keyProperty="buildingId">
+        insert into sys_building
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="buildingName != null and buildingName != ''">building_name,</if>
+            <if test="campusId != null">campus_id,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="buildingName != null and buildingName != ''">#{buildingName},</if>
+            <if test="campusId != null">#{campusId},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysBuilding" parameterType="SysBuilding">
+        update sys_building
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="buildingName != null and buildingName != ''">building_name = #{buildingName},</if>
+            <if test="campusId != null">campus_id = #{campusId},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where building_id = #{buildingId}
+    </update>
+
+    <delete id="deleteSysBuildingByBuildingId" parameterType="Long">
+        update sys_building set del_flag = '2' where building_id = #{buildingId}
+    </delete>
+
+    <delete id="deleteSysBuildingByBuildingIds" parameterType="String">
+        update sys_building set del_flag = '2' where building_id in
+        <foreach item="buildingId" collection="array" open="(" separator="," close=")">
+            #{buildingId}
+        </foreach>
+    </delete>
+</mapper>
