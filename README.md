@@ -31,6 +31,7 @@
 18. 连接池监视：监视当前系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。
 
 二次开发功能
+
 19. 校区（区域）管理：配置系统实训室所属校区（区域）。
 20. 教学楼（建筑物）管理：每个区域可以关联多个建筑物。
 21. 实训室（课室）管理：每一栋建筑物可以关联多个实训室。
@@ -69,7 +70,7 @@
     </tr>
     <tr>
         <td><img src="https://oscimg.oschina.net/oscnet/b6115bc8c31de52951982e509930b20684a.jpg"/></td>
-        <td><img src="https://oscimg.oschina.net/oscnet/up-5e4daac0bb59612c5038448acbcef235e3a.png"/></td>
+        <td><img src="https://oscimg.oschina.net/oscnet/b6115bc8c31de52951982e509930b20684a.jpg"/></td>
     </tr>
     <tr>
         <td><img src="https://gitee.com/null_562_7068/note/raw/master/imags/c1.png"/></td>
