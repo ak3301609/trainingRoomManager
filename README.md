@@ -82,4 +82,5 @@
     </tr>
 </table>
 
+![输入图片说明](https://github.com/ak3301609/images/blob/main/trainingRoomManager/c1.png)
 
