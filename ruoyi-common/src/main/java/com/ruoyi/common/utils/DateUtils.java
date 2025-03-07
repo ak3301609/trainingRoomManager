@@ -31,84 +31,84 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
 
     /** 学校年历 */
     //第一周
-    private static LocalDateTime firstStart = LocalDateTime.of(2024, 9, 2, 0, 0, 0);
-    private static LocalDateTime firstEnd = LocalDateTime.of(2024, 9, 8, 23, 59, 59);
+    private static LocalDateTime firstStart = LocalDateTime.of(2025, 2, 17, 0, 0, 0);
+    private static LocalDateTime firstEnd = LocalDateTime.of(2025, 2, 23, 23, 59, 59);
 
     //第二周
-    private static LocalDateTime secondStart = LocalDateTime.of(2024, 9, 9, 0, 0, 0);
-    private static LocalDateTime secondEnd = LocalDateTime.of(2024, 9, 15, 23, 59, 59);
+    private static LocalDateTime secondStart = LocalDateTime.of(2025, 2, 24, 0, 0, 0);
+    private static LocalDateTime secondEnd = LocalDateTime.of(2025, 3, 2, 23, 59, 59);
 
     //第三周
-    private static LocalDateTime thirdlyStart = LocalDateTime.of(2024, 9, 16, 0, 0, 0);
-    private static LocalDateTime thirdlyEnd = LocalDateTime.of(2024, 9, 22, 23, 59, 59);
+    private static LocalDateTime thirdlyStart = LocalDateTime.of(2025, 3, 3, 0, 0, 0);
+    private static LocalDateTime thirdlyEnd = LocalDateTime.of(2025, 3, 9, 23, 59, 59);
 
     //第四周
-    private static LocalDateTime fourthlyStart = LocalDateTime.of(2024, 9, 23, 0, 0, 0);
-    private static LocalDateTime fourthlyEnd = LocalDateTime.of(2024, 9, 29, 23, 59, 59);
+    private static LocalDateTime fourthlyStart = LocalDateTime.of(2025, 3, 10, 0, 0, 0);
+    private static LocalDateTime fourthlyEnd = LocalDateTime.of(2025, 3, 16, 23, 59, 59);
 
     //第五周
-    private static LocalDateTime fifthStart = LocalDateTime.of(2024, 9, 30, 0, 0, 0);
-    private static LocalDateTime fifthEnd = LocalDateTime.of(2024, 10, 6, 23, 59, 59);
+    private static LocalDateTime fifthStart = LocalDateTime.of(2025, 3, 17, 0, 0, 0);
+    private static LocalDateTime fifthEnd = LocalDateTime.of(2025, 3, 23, 23, 59, 59);
 
     //第六周
-    private static LocalDateTime sixthStart = LocalDateTime.of(2024, 10, 7, 0, 0, 0);
-    private static LocalDateTime sixthEnd = LocalDateTime.of(2024, 10, 13, 23, 59, 59);
+    private static LocalDateTime sixthStart = LocalDateTime.of(2025, 3, 24, 0, 0, 0);
+    private static LocalDateTime sixthEnd = LocalDateTime.of(2025, 3, 30, 23, 59, 59);
 
     //第七周
-    private static LocalDateTime seventhStart = LocalDateTime.of(2024, 10, 14, 0, 0, 0);
-    private static LocalDateTime seventhEnd = LocalDateTime.of(2024, 10, 20, 23, 59, 59);
+    private static LocalDateTime seventhStart = LocalDateTime.of(2025, 3, 31, 0, 0, 0);
+    private static LocalDateTime seventhEnd = LocalDateTime.of(2025, 4, 06, 23, 59, 59);
 
     //第八周
-    private static LocalDateTime eighthStart = LocalDateTime.of(2024, 10, 21, 0, 0, 0);
-    private static LocalDateTime eighthEnd = LocalDateTime.of(2024, 10, 27, 23, 59, 59);
+    private static LocalDateTime eighthStart = LocalDateTime.of(2025, 4, 7, 0, 0, 0);
+    private static LocalDateTime eighthEnd = LocalDateTime.of(2025, 4, 13, 23, 59, 59);
 
     //第九周
-    private static LocalDateTime ninthStart = LocalDateTime.of(2024, 10, 28, 0, 0, 0);
-    private static LocalDateTime ninthEnd = LocalDateTime.of(2024, 11, 3, 23, 59, 59);
+    private static LocalDateTime ninthStart = LocalDateTime.of(2025, 4, 14, 0, 0, 0);
+    private static LocalDateTime ninthEnd = LocalDateTime.of(2025, 4, 20, 23, 59, 59);
 
     //第十周
-    private static LocalDateTime tenthStart = LocalDateTime.of(2024, 11, 4, 0, 0, 0);
-    private static LocalDateTime tenthEnd = LocalDateTime.of(2024, 11, 10, 23, 59, 59);
+    private static LocalDateTime tenthStart = LocalDateTime.of(2025, 4, 21, 0, 0, 0);
+    private static LocalDateTime tenthEnd = LocalDateTime.of(2025, 4, 27, 23, 59, 59);
 
     //第十一周
-    private static LocalDateTime eleventhStart = LocalDateTime.of(2024, 11, 11, 0, 0, 0);
-    private static LocalDateTime eleventhEnd = LocalDateTime.of(2024, 11, 17, 23, 59, 59);
+    private static LocalDateTime eleventhStart = LocalDateTime.of(2025, 4, 28, 0, 0, 0);
+    private static LocalDateTime eleventhEnd = LocalDateTime.of(2025, 5, 4, 23, 59, 59);
 
     //第十二周
-    private static LocalDateTime twelfthStart = LocalDateTime.of(2024, 11, 18, 0, 0, 0);
-    private static LocalDateTime twelfthEnd = LocalDateTime.of(2024, 11, 24, 23, 59, 59);
+    private static LocalDateTime twelfthStart = LocalDateTime.of(2025, 5, 5, 0, 0, 0);
+    private static LocalDateTime twelfthEnd = LocalDateTime.of(2025, 5, 11, 23, 59, 59);
 
     //第十三周
-    private static LocalDateTime thirteenthStart = LocalDateTime.of(2024, 11, 25, 0, 0, 0);
-    private static LocalDateTime thirteenthEnd = LocalDateTime.of(2024, 12, 1, 23, 59, 59);
+    private static LocalDateTime thirteenthStart = LocalDateTime.of(2025, 5, 12, 0, 0, 0);
+    private static LocalDateTime thirteenthEnd = LocalDateTime.of(2025, 5, 18, 23, 59, 59);
 
     //第十四周
-    private static LocalDateTime fourteenthStart = LocalDateTime.of(2024, 12, 2, 0, 0, 0);
-    private static LocalDateTime fourteenthEnd = LocalDateTime.of(2024, 12, 8, 23, 59, 59);
+    private static LocalDateTime fourteenthStart = LocalDateTime.of(2025, 5, 19, 0, 0, 0);
+    private static LocalDateTime fourteenthEnd = LocalDateTime.of(2025, 5, 25, 23, 59, 59);
 
     //第十五周
-    private static LocalDateTime fifteenthStart = LocalDateTime.of(2024, 12, 9, 0, 0, 0);
-    private static LocalDateTime fifteenthEnd = LocalDateTime.of(2024, 12, 15, 23, 59, 59);
+    private static LocalDateTime fifteenthStart = LocalDateTime.of(2025, 5, 26, 0, 0, 0);
+    private static LocalDateTime fifteenthEnd = LocalDateTime.of(2025, 6, 1, 23, 59, 59);
 
     //第十六周
-    private static LocalDateTime sixteenthStart = LocalDateTime.of(2024, 12, 16, 0, 0, 0);
-    private static LocalDateTime sixteenthEnd = LocalDateTime.of(2024, 12, 22, 23, 59, 59);
+    private static LocalDateTime sixteenthStart = LocalDateTime.of(2025, 6, 2, 0, 0, 0);
+    private static LocalDateTime sixteenthEnd = LocalDateTime.of(2025, 6, 8, 23, 59, 59);
 
     //第十七周
-    private static LocalDateTime seventeenthStart = LocalDateTime.of(2024, 12, 23, 0, 0, 0);
-    private static LocalDateTime seventeenthEnd = LocalDateTime.of(2024, 12, 29, 23, 59, 59);
+    private static LocalDateTime seventeenthStart = LocalDateTime.of(2025, 6, 9, 0, 0, 0);
+    private static LocalDateTime seventeenthEnd = LocalDateTime.of(2025, 6, 15, 23, 59, 59);
 
     //第十八周
-    private static LocalDateTime eighteenthStart = LocalDateTime.of(2024, 12, 30, 0, 0, 0);
-    private static LocalDateTime eighteenthEnd = LocalDateTime.of(2025, 1, 5, 23, 59, 59);
+    private static LocalDateTime eighteenthStart = LocalDateTime.of(2025, 6, 16, 0, 0, 0);
+    private static LocalDateTime eighteenthEnd = LocalDateTime.of(2025, 6, 22, 23, 59, 59);
 
     //第十九周
-    private static LocalDateTime nineteenthStart = LocalDateTime.of(2025, 1, 6, 0, 0, 0);
-    private static LocalDateTime nineteenthEnd = LocalDateTime.of(2025, 1, 12, 23, 59, 59);
+    private static LocalDateTime nineteenthStart = LocalDateTime.of(2025, 6, 23, 0, 0, 0);
+    private static LocalDateTime nineteenthEnd = LocalDateTime.of(2025, 6, 29, 23, 59, 59);
 
     //第二十周
-    private static LocalDateTime twentiethStart = LocalDateTime.of(2025, 1, 13, 0, 0, 0);
-    private static LocalDateTime twentiethEnd = LocalDateTime.of(2025, 1, 19, 23, 59, 59);
+    private static LocalDateTime twentiethStart = LocalDateTime.of(2025, 6, 30, 0, 0, 0);
+    private static LocalDateTime twentiethEnd = LocalDateTime.of(2025, 7, 6, 23, 59, 59);
 
     /**
      * 获取当前Date型日期
