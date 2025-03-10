@@ -318,45 +318,45 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils
 
         String weekStr;
 
-        if (firstStart.isBefore(current) && firstEnd.isAfter(current)){
+        if ((firstStart.isBefore(current) || firstStart.isEqual(current)) && firstEnd.isAfter(current)){
             weekStr = "第一周";
-        }else if (secondStart.isBefore(current) && secondEnd.isAfter(current)){
+        }else if ((secondStart.isBefore(current) || secondStart.isEqual(current)) && secondEnd.isAfter(current)){
             weekStr = "第二周";
-        }else if (thirdlyStart.isBefore(current) && thirdlyEnd.isAfter(current)){
+        }else if ((thirdlyStart.isBefore(current) || thirdlyStart.isEqual(current)) && thirdlyEnd.isAfter(current)){
             weekStr = "第三周";
-        }else if (fourthlyStart.isBefore(current) && fourthlyEnd.isAfter(current)){
+        }else if ((fourthlyStart.isBefore(current) || fourthlyStart.isEqual(current)) && fourthlyEnd.isAfter(current)){
             weekStr = "第四周";
-        }else if (fifthStart.isBefore(current) && fifthEnd.isAfter(current)){
+        }else if ((fifthStart.isBefore(current) || fifthStart.isEqual(current)) && fifthEnd.isAfter(current)){
             weekStr = "第五周";
-        }else if (sixthStart.isBefore(current) && sixthEnd.isAfter(current)){
+        }else if ((sixthStart.isBefore(current) || sixthStart.isEqual(current)) && sixthEnd.isAfter(current)){
             weekStr = "第六周";
-        }else if (seventhStart.isBefore(current) && seventhEnd.isAfter(current)){
+        }else if ((seventhStart.isBefore(current) || seventhStart.isEqual(current)) && seventhEnd.isAfter(current)){
             weekStr = "第七周";
-        }else if (eighthStart.isBefore(current) && eighthEnd.isAfter(current)){
+        }else if ((eighthStart.isBefore(current) || eighthStart.isEqual(current)) && eighthEnd.isAfter(current)){
             weekStr = "第八周";
-        }else if (ninthStart.isBefore(current) && ninthEnd.isAfter(current)){
+        }else if ((ninthStart.isBefore(current) || ninthStart.isEqual(current)) && ninthEnd.isAfter(current)){
             weekStr = "第九周";
-        }else if (tenthStart.isBefore(current) && tenthEnd.isAfter(current)){
+        }else if ((tenthStart.isBefore(current) || tenthStart.isEqual(current)) && tenthEnd.isAfter(current)){
             weekStr = "第十周";
-        }else if (eleventhStart.isBefore(current) && eleventhEnd.isAfter(current)){
+        }else if ((eleventhStart.isBefore(current) || eleventhStart.isEqual(current)) && eleventhEnd.isAfter(current)){
             weekStr = "第十一周";
-        }else if (twelfthStart.isBefore(current) && twelfthEnd.isAfter(current)){
+        }else if ((twelfthStart.isBefore(current) || twelfthStart.isEqual(current)) && twelfthEnd.isAfter(current)){
             weekStr = "第十二周";
-        }else if (thirteenthStart.isBefore(current) && thirteenthEnd.isAfter(current)){
+        }else if ((thirteenthStart.isBefore(current) || thirteenthStart.isEqual(current)) && thirteenthEnd.isAfter(current)){
             weekStr = "第十三周";
-        }else if (fourteenthStart.isBefore(current) && fourteenthEnd.isAfter(current)){
+        }else if ((fourteenthStart.isBefore(current) || fourteenthStart.isEqual(current)) && fourteenthEnd.isAfter(current)){
             weekStr = "第十四周";
-        }else if (fifteenthStart.isBefore(current) && fifteenthEnd.isAfter(current)){
+        }else if ((fifteenthStart.isBefore(current) || fifteenthStart.isEqual(current)) && fifteenthEnd.isAfter(current)){
             weekStr = "第十五周";
-        }else if (sixteenthStart.isBefore(current) && sixteenthEnd.isAfter(current)){
+        }else if ((sixteenthStart.isBefore(current) || sixteenthStart.isEqual(current)) && sixteenthEnd.isAfter(current)){
             weekStr = "第十六周";
-        }else if (seventeenthStart.isBefore(current) && seventeenthEnd.isAfter(current)){
+        }else if ((seventeenthStart.isBefore(current) || seventeenthStart.isEqual(current)) && seventeenthEnd.isAfter(current)){
             weekStr = "第十七周";
-        }else if (eighteenthStart.isBefore(current) && eighteenthEnd.isAfter(current)){
+        }else if ((eighteenthStart.isBefore(current) || eighteenthStart.isEqual(current)) && eighteenthEnd.isAfter(current)){
             weekStr = "第十八周";
-        }else if (nineteenthStart.isBefore(current) && nineteenthEnd.isAfter(current)){
+        }else if ((nineteenthStart.isBefore(current) || nineteenthStart.isEqual(current)) && nineteenthEnd.isAfter(current)){
             weekStr = "第十九周";
-        }else if (twentiethStart.isBefore(current) && twentiethEnd.isAfter(current)){
+        }else if ((twentiethStart.isBefore(current) || twentiethStart.isEqual(current)) && twentiethEnd.isAfter(current)){
             weekStr = "第二十周";
         }else{
             weekStr = "无法识别";
